@@ -67,23 +67,23 @@ class UserRestClientTest {
 
         // then
         User leanne = client.findById(1);
-        assertEquals(user.name(), "Leanne", "User name should be Leanne");
-        assertEquals(user.username(), "lgraham", "User username should be lgraham");
-        assertEquals(user.email(), "lgraham@gmail.com");
+        assertEquals(leanne.name(), "Leanne", "User name should be Leanne");
+        assertEquals(leanne.username(), "lgraham", "User username should be lgraham");
+        assertEquals(leanne.email(), "lgraham@gmail.com");
         assertAll("Address",
-                () -> assertEquals(user.address().street(), "Kulas Light"),
-                () -> assertEquals(user.address().suite(), "Apt. 556"),
-                () -> assertEquals(user.address().city(), "Gwenborough"),
-                () -> assertEquals(user.address().zipcode(), "92998-3874"),
-                () -> assertEquals(user.address().geo().lat(), "-37.3159"),
-                () -> assertEquals(user.address().geo().lng(), "81.1496")
+                () -> assertEquals(leanne.address().street(), "Kulas Light"),
+                () -> assertEquals(leanne.address().suite(), "Apt. 556"),
+                () -> assertEquals(leanne.address().city(), "Gwenborough"),
+                () -> assertEquals(leanne.address().zipcode(), "92998-3874"),
+                () -> assertEquals(leanne.address().geo().lat(), "-37.3159"),
+                () -> assertEquals(leanne.address().geo().lng(), "81.1496")
         );
-        assertEquals(user.phone(), "1-770-736-8031 x56442");
-        assertEquals(user.website(), "hildegard.org");
+        assertEquals(leanne.phone(), "1-770-736-8031 x56442");
+        assertEquals(leanne.website(), "hildegard.org");
         assertAll("Company",
-                () -> assertEquals(user.company().name(), "Romaguera-Crona"),
-                () -> assertEquals(user.company().catchPhrase(), "Multi-layered client-server neural-net"),
-                () -> assertEquals(user.company().bs(), "harness real-time e-markets"));
+                () -> assertEquals(leanne.company().name(), "Romaguera-Crona"),
+                () -> assertEquals(leanne.company().catchPhrase(), "Multi-layered client-server neural-net"),
+                () -> assertEquals(leanne.company().bs(), "harness real-time e-markets"));
     }
 
 }
