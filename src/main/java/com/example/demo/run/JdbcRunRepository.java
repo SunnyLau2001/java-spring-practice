@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class JdbcClientRunRepository {
+public class JdbcRunRepository {
 
     private List<Run> runs = new ArrayList<>();
     private final JdbcClient jdbcClient;
 
-    public JdbcClientRunRepository(JdbcClient jdbcClient) {
+    public JdbcRunRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 
@@ -26,7 +26,7 @@ public class JdbcClientRunRepository {
     }
 
     public Optional<Run> findById(Integer id) {
-        return jdbcClient.sql("SELECT id, title, started_on, completed_on, miles, location FROM Run WHERE id = :id")
+        return jdbcClient.sql("SELECT id, title, started_on, completed_on, miles, location, version FROM Run WHERE id = :id")
                 .param("id", id)
                 .query(Run.class)
                 .optional();
